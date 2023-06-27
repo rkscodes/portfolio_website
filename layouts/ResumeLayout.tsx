@@ -9,7 +9,7 @@ export function ResumeLayout({ children }: ResumeLayoutProps) {
   return (
     <>
       <PageSeo
-        title={`Resume - ${siteMetadata.fullName} - ${description}`}
+        title={`Resume - ${siteMetadata.author}`}
         description={`Resume - ${siteMetadata.fullName} - ${description}`}
       />
       <ScrollTopButton />

@@ -1,35 +1,34 @@
 export let siteMetadata = {
-  title: "Leo's blog - Leo's coding journey",
-  author: 'Leo Huynh',
-  fullName: 'Tuan Anh Huynh',
-  headerTitle: "Leo's blog - Leo's coding journey",
-  footerTitle: "Leo's blog - Leo's coding journey",
-  description:
-    "Leo's coding journey - work and life stories through the keyboard of an open-minded Software Engineer",
+  title: 'Ram Krishna 🌟',
+  author: 'Ram Krishna 🌟',
+  fullName: 'Ram Krishna Singh',
+  headerTitle: "Ram's Coding Chronicles 🌟",
+  footerTitle: "Ram's Coding Chronicles 🌟",
+  description: "Ram's coding journey and his blogs",
   language: 'en-us',
-  siteUrl: 'https://www.leohuynh.dev',
-  siteRepo: 'https://github.com/hta218/leohuynh.dev',
+  siteUrl: 'https://rks.codes',
+  siteRepo: 'https://github.com/rkscodes/ram_portfolio',
   siteLogo: '/static/images/logo.jpg',
   image: '/static/images/logo.jpg',
   socialBanner: '/static/images/logo.jpg',
-  email: 'leohuynh@pm.me',
-  github: 'https://github.com/hta218',
-  twitter: 'https://twitter.com/hta218_',
-  facebook: 'https://facebook.com/hta218',
-  youtube: 'https://www.youtube.com/@hta218_',
-  linkedin: 'https://www.linkedin.com/in/hta218/',
+  email: 'rkscodes@gmail.com',
+  github: 'https://github.com/rkscodes',
+  twitter: 'https://twitter.com/rkscodes',
+  // facebook: 'https://facebook.com/hta218',
+  // youtube: 'https://www.youtube.com/@hta218_',
+  linkedin: 'https://www.linkedin.com/in/rkscodes',
   locale: 'en-US',
   analyticsURL: 'https://analytics.leohuynh.dev/share/jkwRskv0/leohuynh.dev',
   analytics: {
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
     simpleAnalytics: false, // true or false
-    umamiWebsiteId: '2df62ae5-7f13-455b-8e54-c15b96ff2b8b', // e.g. 123e4567-e89b-12d3-a456-426614174000
+    umamiWebsiteId: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
     googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
   },
   socialAccounts: {
-    github: 'hta218',
-    twitter: 'hta218_',
-    linkedin: 'hta218',
+    github: 'rkscodes',
+    twitter: 'rkscodes',
+    linkedin: 'rkscodes',
   },
 }
 

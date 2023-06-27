@@ -11,7 +11,7 @@ export function AuthorLayout({ children }: AuthorLayoutProps) {
   return (
     <>
       <PageSeo
-        title={`${title} - ${siteMetadata.author} - ${siteMetadata.title}`}
+        title={`${title} - ${siteMetadata.author}`}
         description={`${title} - ${siteMetadata.title} - ${description}`}
       />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">

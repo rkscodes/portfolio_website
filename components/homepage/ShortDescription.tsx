@@ -1,10 +1,11 @@
 export function ShortDescription() {
   return (
     <div className="mb-8 mt-4">
-      <p>I started learning to code in 2016 and have been hooked ever since.</p>
-      <p>I landed my first job as a Python coding mentor in 2017.</p>
-      <p>I have a passion for JS/TS, web dev, and eCommerce.</p>
-      <p>I started this blog to document and share my knowledge & experience.</p>
+      <p>I always wanted to know how computer works.</p>
+      <p>I was amazed by my first "Hello World" program.</p>
+      <p>I pursued my B.Tech and M.Tech degrees in Computer Science.</p>
+      <p>I landed my first job as a Data Science Engineer in 2023.</p>
+      <p>I intend to write blogs to share whatever I have got.</p>
     </div>
   )
 }

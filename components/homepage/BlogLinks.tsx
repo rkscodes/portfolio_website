@@ -8,7 +8,7 @@ export function BlogLinks() {
       <Link href="/projects" className="hover:underline">
         <Twemoji emoji="hammer-and-wrench" />
         <span data-umami-event="home-link-projects" className="ml-1.5">
-          What have I built?
+          My projects
         </span>
       </Link>
       <Link href="/blog" className="hover:underline">
@@ -35,12 +35,12 @@ export function BlogLinks() {
           My career
         </span>
       </Link>
-      <Link href={siteMetadata.analyticsURL} className="hover:underline">
+      {/* <Link href={siteMetadata.analyticsURL} className="hover:underline">
         <Twemoji emoji="bar-chart" />
         <span data-umami-event="home-link-analytics" className="ml-1.5">
           Traffic & engagement of this site
         </span>
-      </Link>
+      </Link> */}
     </div>
   )
 }
