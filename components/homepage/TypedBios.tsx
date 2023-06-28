@@ -21,7 +21,7 @@ export function TypedBios() {
     <div>
       <ul id="bios" className="hidden">
         <li>
-          People usually call me <b className="font-medium">Ram</b> in short.
+          People usually call me <b className="font-medium">Ram</b>.
         </li>
         <li>
           I live in <b className="font-medium">Hyderabad, India</b>.
