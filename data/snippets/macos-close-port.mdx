@@ -1,0 +1,31 @@
+---
+heading: 'MacOS close Port'
+title: "MacOS close Port which is open"
+date: "2023-07-29"
+type: "AppleLogo"
+draft: false
+summary: "Custom hooks to use local storage state"
+tags: [port, mac]
+---
+
+import Twemoji from './Twemoji.tsx'
+
+Sometimes you can't run a server as the Port number is used by some other process. So in that case we require to do two thing: 
+1. Find the PID of process which is using that Port.
+Find the PID 
+```bash
+sudo lsof -i :5955
+```
+2. Kill that process
+```bash
+sudo kill -9 PID
+```
+
+
+
+
+
+
+
+
+Happy freeing! <Twemoji emoji="clinking-beer-mugs" />
