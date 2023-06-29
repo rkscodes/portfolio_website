@@ -86,14 +86,14 @@ export function BlogSeo(props: BlogSeoProps) {
   return (
     <>
       <Head>
-        <title>{`${title} | ${siteMetadata.headerTitle}`}</title>
+        <title>{`${title} ${siteMetadata.headerTitle}`}</title>
         <meta name="robots" content="follow, index" />
         <meta name="description" content={summary} />
         <meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content={siteMetadata.title} />
         <meta property="og:description" content={summary} />
-        <meta property="og:title" content={`${title} | ${siteMetadata.headerTitle}`} />
+        <meta property="og:title" content={`${title} ${siteMetadata.headerTitle}`} />
         {featuredImages.map((img) => (
           <meta property="og:image" content={img.url} key={img.url} />
         ))}
