@@ -1,9 +1,9 @@
 export let siteMetadata = {
   title: 'Ram Krishna 🌟',
-  author: 'Ram Krishna',
+  author: 'Ram Krishna 🌟',
   fullName: 'Ram Krishna Singh',
-  headerTitle: '📖',
-  footerTitle: "Ram's Binary World 🌟",
+  headerTitle: "Ram's Coding Chronicles 🌟",
+  footerTitle: "Ram's Coding Chronicles 🌟",
   description: "Ram's coding journey and his blogs",
   language: 'en-us',
   siteUrl: 'https://rks.codes',
