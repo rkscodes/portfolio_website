@@ -1,0 +1,69 @@
+---
+title: "Creating an Ecosystem Between Mac and Android"
+date: "2023-07-07"
+tags: ['mac', 'android', 'ecosystem', 'tech']
+draft: false
+summary: "Discover how to create a seamless ecosystem between your Mac and Android devices, enabling local file sharing, notification synchronization, and more. Unlock the potential of your devices by connecting them and enhancing your productivity."
+images: ["/static/images/android-mac.jpg"]
+authors: ["default"]
+---
+
+import Twemoji from './Twemoji.tsx'
+import UnsplashPhotoInfo from './UnsplashPhotoInfo.tsx'
+
+![thumbnail-image](/static/images/android-mac.jpg)
+
+<UnsplashPhotoInfo photoURL="https://unsplash.com/photos/eb1cgnNIazI" author="Azamat E" />
+
+## Introduction
+Many people use both Android and Mac for different reasons. Mac is loved for its Unix-based system, great for development, while Android offers features like call recording and USB-C. Regardless of your reasons, you can create a solid ecosystem between these devices, and it seems that not many people are aware of it.
+
+An ideal ecosystem includes the following features:
+- Seamless file sharing between Mac and Android with fast speeds.
+- Notification syncing, allowing you to receive and reply to notifications on your Mac.
+
+If this sounds like what you want, follow along, and we will guide you through the setup process.
+
+## Setup
+To establish the ecosystem, you'll need two essential applications: KDE Connect and Soduto.
+
+- [KDE Connect](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp&hl=en&gl=US): Install this app on your Android device from the Google Play Store.
+
+- [Soduto](https://soduto.com/downloads/Soduto_v1.0.1.dmg): Download and install Soduto on your Mac. If you are using Apple Silicon, there is an unofficial [Apple Silicon Build](https://github.com/sannidhyaroy/Soduto/releases/download/v1.1.2-nightly/Soduto-Nightly.dmg) available.
+
+> Note: Your devices must be connected to the same Wi-Fi network, or you can create a hotspot on your Android and connect your Mac to it.
+
+### Connecting both Apps (One-time setup)
+1. On your Android device, open the KDE Connect app. It will display the "Device Name." Tap on it and then tap "Request Pairing." You will receive a pairing alert on your Mac. Click on "Accept," and you will be connected.
+2. If you don't see your Mac's Device Name, quit "Soduto" and reopen it.
+3. On your Android phone, you will see a list of options. Choose the functionality you want, such as "Notification Sync." This will sync your notifications from Android to your Mac.
+
+#### Suggestions for a better experience
+1. After installing KDE Connect on Android, disable battery optimization for the app. This will allow it to run in the background without draining much battery.
+   - Long-press the app icon -> Tap the "i" button on the top right -> Battery -> Unrestricted
+
+2. KDE Connect on Android displays a persistent notification. If you prefer not to see it, you can turn it off:
+   - Long-press the app icon -> Tap the "i" button on the top right -> Notification -> Notification Category -> Uncheck "Persistent Notification"
+
+3. After opening Soduto on your Mac, click on "Launch on Login" to ensure it automatically starts up after every restart.
+
+## How do I share files?
+You can choose to share files in two ways:
+
+- Mac to Android: Select the files you want to share, drag and drop them onto the Soduto icon at the top, and then click on your device name. The files will be sent to the Downloads folder on your Android device.
+
+- Android to Mac: Select the files you want to share on your Android device, tap to share, and look for the KDE Connect app. If you can't find it in the share menu, tap on "More." KDE Connect will be listed there. Select it, tap on your Mac's device name, and the files will be sent to the Downloads folder on your Mac.
+
+## How does it work?
+In short, this ecosystem utilizes the KDE Connect protocol developed by the KDE community.
+
+KDE Connect is a protocol and app that allows two devices to connect and synchronize notifications, share files, and perform other cool functions. Currently, it has an Android client, a Linux client, and a Mac client (which is still in development). However, an independent developer has created the Mac client named "Soduto," which works great and is open source. In the future, we may be able to use the official KDE Connect client on Mac.
+
+These two clients communicate with each other using the KDE protocol. If you'd like to learn more about it, here are some additional resources:
+
+- [Soduto GitHub](https://github.com/soduto/Soduto)
+- [KDE Connect Website](https://kdeconnect.kde.org/)
+
+If you require any help just click "Discuss on Twitter" or comment down below and I will help you out.
+
+Happy sharing <Twemoji emoji="clinking-beer-mugs" />.
