@@ -17,4 +17,255 @@ import UnsplashPhotoInfo from './UnsplashPhotoInfo.tsx'
 
 If you know other programming language and want to get started with JavaScript, this article will help you. Otherwise be ready to google things and you will be fine.
 
-## TEST
+
+1. Undeclared variables are given "undefined" type as well as value 
+	1. `var x`  :: this is undeclared but defined 
+	2. But JavaScript will assign it's value as undefined 
+2. Every declaration of variable or fun is hoisted at top of scope.
+3. `var` has function scope
+4. JavaScript religiously split  declaration + definition/assignment (var x = 10) to declaration then definition var x; x = 10
+5. All undeclared variable are declared at time of execution in global scope. Yes so all of them are global implicitly.
+6. `var` is function scoped, means it will be accessible in whole function while `let & const` are local scoped. 
+7. Declaration means like `let x` Assignment/Definition/Intialization mean assigning value to it.
+
+### This is not true that only `var` is hoisted also `let & const` are hoisted 
+
+```js
+console.log(number)
+// ReferenceError: Cannot access 'number' before initialization
+
+let number = 10
+
+console.log(number)
+```
+
+Notice the difference in error messages 
+
+```js
+console.log(number2)
+// **ReferenceError: number2 is not defined**
+
+let number = 10
+```
+
+So the thing is `let & const` are also hoisted but are not implicitly initialized/assigned with `undefined`
+
+
+This is also called `temportal dead zone` were JavaScript is aware of the variable existence but it's not accessible to it. 
+
+### How many primitive data types are there in javascript and what are they ?
+
+What is primitive type anyways ?
+ In javascript a primitve data type is data  type which is not an object and has no methods or properties. 
+
+
+1. By definition only two type of primitive types may serve as object property values: 
+	1. String type
+	2. Symbol type
+2. Even if you don't use string, for example you use number or boolean type it will also convert to string type to be used when indexing
+3. Similarily for alert() it auto converts everything to string except `symbol` as it is not auto converted.
+
+
+### Javascript Objects
+1. created using Object() called object constructor or {} called object literal
+2. Keys could accessed using `.` notation or using `[ ]` 
+3. `[ ]` are really powerful, example allows variable computation and string at same time
+	1. let x ="number"; obj[x] = 10
+	2. or object["some"] = 20 
+4. When defining inside of the object literal for variable as value we need to use `[ ]` to denote it's computed.
+	1. let fruit = prompt("Which fruit to buy")
+	2. ``` let bag = {
+	3. [fruits] : 5, 
+	4. };  ```
+
+### Property value shorthand
+
+```js
+function makeUser(name, age) {
+  return {
+    name, // same as name: name
+    age,  // same as age: age
+    // ...
+  };
+}
+// will return object with name and age as object keys this is shorthand.
+// could also use both shorthand and normal notation at same time.
+```
+
+
+```js
+function sum(obj){
+	for (key in obj){
+		if (typeof obj[key] == "number")
+		obj[key] = obj[key]*2
+	}
+}
+```
+
+### Methods of primitive ??
+You may wonder how we can have methods in our primitive datatype like string or numbers for example.
+
+So here is what happens, the language decided to keep it lightweight  but also give methods, so for that when we call any property on the primitives
+	1. It will create a new wrapper object with that value 
+	2. The operation on the data will performed and returned 
+	3.
+IN this way our operation is light and functionality is achieved for sure. 
+
+### JavaScript is prototype based language.
+
+Prototype is object itself which other objects could inherit and then extend the property of it.
+
+Basically there are two types of OOPS
+	1. Classical OOP
+	2. Prototypical OOP
+
+Prototypical OOP :: Here classes doesn't inherit from each other but objects inherits other object. At heart it is similar to inheritance. 
+
+So every object must have  a prototype, yes every object has by default `[[protype]]` defined internally which is used to assign when creating objects. 
+
+So if you want to create object with your custom `prototype` then you should use `Object.create()` to do so. Also, you can use `__proto__` to change the type to some other types if required. 
+
+Also remember `__proto__` is outdated JavaScript recommends to use `Ojbect.setPrototypeOf(obj, property)` but since `__proto__` is required by language specification. 
+
+### Property retrieval mechanism
+
+When property is accessed on a given object in javascript, if that property exists on the object then it's used or otherwise searching moves to the next prototype down the chain.
+
+
+### Property assignment mechanism
+
+If something is un-writable or don't allow modification then if you try to write that property it will be ignored for the whole prototype chain.
+
+
+> One important thing to note is that `.this` will not follow the prototype rules, it will just use the current object to perform so, there is one interesting case which you should look onto.
+
+```js
+let hamster = {
+  stomach: [],
+
+  eat(food) {
+    this.stomach.push(food);
+  }
+};
+
+let speedy = {
+  __proto__: hamster
+};
+
+let lazy = {
+  __proto__: hamster
+};
+
+// This one found the food
+speedy.eat("apple");
+alert( speedy.stomach ); // apple
+
+// This one also has it, why? fix please.
+alert( lazy.stomach ); // apple
+```
+
+
+
+### Type conversion
+
+Most of the time, operators and functions automatically convert the values given tot them to the right type.
+
+example: alert() converts to string, also you can see how objects keys are automatically converted to strings except for symbol.
+
+If you explicity convert something to say `Number()` and if the conversion of that string is not possible then it will return `NULL`.
+
+So here is few rules for numeric conversion.
+
+![[Pasted image 20230914153054.png]]
+
+
+Two common point of errors of this conversion: 
+1. `undefined` is NAN, not 0
+2. "0" or "   " in Boolean is not 0, it's 1 because it is not empty.
+
+### Indexed collections
+
+#### Array
+
+```js
+// This...
+const arr1 = new Array(arrayLength);
+
+// ...results in the same array as this
+const arr2 = Array(arrayLength);
+
+// This has exactly the same effect
+const arr3 = [];
+arr3.length = arrayLength;
+
+```
+
+This all creates array with specified length, if you want to create array with 1 element you can't use Array constructor or function call, you can only use `[ ]` notation.
+
+> If you supply non-integer value to the array operator, a property will be created, instead of array element.
+
+> To change length just change `.length()` property of the array and it will work. Yes both truncate and size increase.
+
+> Don't use `for..in` loops because normal elements and all enumerable properties will be listed. Use `.foreach()` or `for..of` with length checks
+
+Array some common known methods are:  `.concat() .join("-") .push(), .pop() .shift() .unshift() .slice() .at() .splice() .reverse() .flat() .sort(). indexOf() .lastIndexOf() .forEach()` and many [more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#populating_an_array:~:text=will%20be%20listed.-,Array%20methods,-The%20Array%20object) 
+
+`shift` : is used to remove elements from front, for ex to remove first element use `arr.shift()`
+`unshift`: is used to to add elements add `front. arr.unshift("4", "5")`
+
+Arrays have their own implementation of `.toString()` method that returns a comma-separated list of elements. 
+
+```js
+let arr = [1,2,3];
+
+alert(arr); // 1,2,3
+alert(String(arr)) // "1,2,3"
+```
+
+So if you do something like `[1,2,3] + 3` Array will call `String()` method on it. 
+
+##### NO special treatment for array 
+
+So like the whole treatment with Objects, `==` or `===` works same with array objects.
+
+Let's see the rules of `==` in brief.
+1. Two objects are equal == only if they’re references to the same object.
+2. If one of the arguments of == is an object, and the other one is a primitive, then the object gets converted to primitive, as explained in the chapter Object to primitive conversion.
+3. …With an exception of null and undefined that equal == each other and nothing else.
+
+> So the only way to compare the Array is to just use the item by item comparison
+
+
+#### Typed Arrays
+
+It basically contains 2 things
+	1. `ArrayBuffer`( ) :: It is used to allocate the number of bytes required. But it doesn't provide access to those data for that 
+	2. `DataView`(`arrayBufferInstance`):: You could choose to use different view type for this and then pass it, so that we can have all read/write methods.
+
+### Keyed Collections 
+
+Data which are indexed by a key; `Map` and `Set` objects contain elements which are iterable in the order of the insertion. 
+
+> The main difference in `map` and `object` is that `map` allows keys of any type.
+
+> If you use `[ ]` notation with Keyed types you are treating it as same as `Objects` which means limitations like key can be strings or symbols.
+
+So just use the standard ways like `.set()` , `.get()` 
+
+> One interesting thing to know is you can also use `Object` as key in `map` or `set` but you can only use one object as key in `Objects` also which will convert it's key to `object Object`
+
+`map.set()` return the map itself, so you could chain it.
+
+Sure there is way to convert object to map using `new Map(Object.entries(obj))` or other way around Object from map `Object.fromEntries(map)`
+
+##### A set is special type collection - "set of values" (without keys), where each value may occur only once. 
+
+Set is much better optimized internally for uniqueness checks. HOW ? 
+
+> The funny thing is `.foreach(value, valueAgain, set)` value is passed 2 times, this is for comptability reasons.
+
+For example `set.keys()` and `set.values()` both returns `set.keys()` also `set.entries()` returns and iterable object for entries `[value, value]` all of this exists for compatibility with `Map`.
+
+
+
+
