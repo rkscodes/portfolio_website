@@ -24,7 +24,7 @@ export function ListLayout(props: ListLayoutProps) {
             {title}
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            I write mostly (will update once I write). Use the search below to filter by title.
+            Use the search below to filter by title.
           </p>
           <PostsSearch onChange={setSearchValue} />
         </div>
