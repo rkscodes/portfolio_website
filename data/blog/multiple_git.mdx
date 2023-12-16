@@ -1,0 +1,48 @@
+---
+title: "Multiple GIT ssh profile"
+date: "2023-09-21"
+tags: ['git', 'github', 'two git']
+draft: false
+summary: "I will show you how to create multiple git ssh profile configuration on same machine easy and clean way."
+images: ["/static/images/multiple_git.jpg"]
+authors: ["default"]
+---
+
+import Twemoji from './Twemoji.tsx'
+import UnsplashPhotoInfo from './UnsplashPhotoInfo.tsx'
+
+![thumbnail-image](/static/images/multiple_git.jpg)
+
+<UnsplashPhotoInfo photoURL="https://unsplash.com/photos/black-and-white-penguin-toy-wX2L8L-fGeA" author="Roman Synkevych" />
+
+## Introduction
+If you have multiple github accounts or many different cloud git hosting platforms and would like this setup all of them on your single machine, this guide will show you how to acheive it using git's `includeIf`.
+
+## How it will work 
+For each profile you will create that many folders on your machine. And based on which folder you are currently in git will decide which ssh profile to use. 
+
+## Let's setup the ssh keys
+First of all for the accounts create different ssh keys. Below are the 3 steps.
+
+1. Create a new ssh key.
+```shell
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+2. When prompted for file name, make sure to enter something which you can associate with and make sure to enter the complete path or file will be created in current dir. For example:
+```bash
+Users/<username>/.ssh/github_work_profile
+```
+3. To leave passphrase empty hit enter key.
+
+Do this any many times you would like to for as many accounts you have.
+
+## Setting up folder structure
+Say you have 2 github profiles, then you would dedicate two different folders to host their projects. 
+
+`~/Developer/work_profile/` 
+
+`~/Developer/personal_profile/`
+
+Make sure to clone your projects in right directory as based on it respective ssh profile will be used. For example any folders inside of `~Developers/work_profile/` will use your work ssh credentials.
+
+## Setting up config file for each profile
