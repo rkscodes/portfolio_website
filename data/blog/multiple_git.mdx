@@ -21,6 +21,19 @@ If you have multiple github accounts or many different cloud git hosting platfor
 ## How it will work 
 For each profile you will create that many folders on your machine. And based on which folder you are currently in git will decide which ssh profile to use. 
 
+## Setting up folder structure
+Say you have 2 github profiles, then you would dedicate two different folders to host their projects. 
+
+`~/Developer/work_profile/` 
+
+`~/Developer/personal_profile/`
+
+Or you can also use default profile in all folder except say `work_profile`, in that case you would create one profile (work_profile) and rest all folders will use your default config.
+
+> In this case make sure to use default ssh file name and not change it while creating.
+
+Make sure to clone your projects in right directory as based on it respective ssh profile will be used. For example any folders inside of `~Developers/work_profile/` will use your work ssh credentials.
+
 ## Let's setup the ssh keys
 First of all for the accounts create different ssh keys. Below are the 3 steps.
 
@@ -30,19 +43,60 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 2. When prompted for file name, make sure to enter something which you can associate with and make sure to enter the complete path or file will be created in current dir. For example:
 ```bash
-Users/<username>/.ssh/github_work_profile
+Users/<username>/.ssh/github_work
 ```
 3. To leave passphrase empty hit enter key.
 
 Do this any many times you would like to for as many accounts you have.
 
-## Setting up folder structure
-Say you have 2 github profiles, then you would dedicate two different folders to host their projects. 
 
-`~/Developer/work_profile/` 
 
-`~/Developer/personal_profile/`
+## Configuring .gitconfig
+Now we need to tell git which profile to use based on which folder the project is, to do place the following the code at the end of your .gitconfig. 
 
-Make sure to clone your projects in right directory as based on it respective ssh profile will be used. For example any folders inside of `~Developers/work_profile/` will use your work ssh credentials.
+```bash
+[includeIf "gitdir:/path/to/work/repository/"]
+	path = ~/.ssh/<profile_name>
+```
+This tells git to use profile mentioned at path if in mentioned directory or sub directory of it. Please make sure you have `/` at last of repository in gitdir or sub directory folders won't work.
 
-## Setting up config file for each profile
+Also, you are free to place your profiles in any directory just give the appropiate path, here I will be using the .ssh dir to place it.
+
+> Make sure to place this config at last or it might be overwritten by other configs in file. 
+
+## Creating profiles
+So say I have work profile and personal profile, so I would just setup folder for work_profile and rest all will use my default profile. 
+
+create a file named: `~/.ssh/github_work_profile`
+```bash
+[user]
+	email = work@email.com
+[core]
+	sshCommand = "ssh -i ~/.ssh/github_work"
+```
+In the case you want to use different email id for work and personal projects you do so, you can also change the name if you would like. 
+
+Replace the appropirate name of ssh keys you created with. 
+
+Now in your `.gitconfig`, place this file path in `path`, ex: 
+```bash
+[includeIf "gitdir:/path/to/work/repository/"]
+	path = ~/.ssh/github_work_profile
+```
+
+## Making sure everything works fine
+Remember, it will only work if the said directory you have a folder with .git intialized. 
+
+Now check for your email in that folder.
+```bash
+git config user.email
+```
+
+It should match with the profile you want to be in, if not make sure all the paths are correct.
+
+If you require any help just click "Discuss on Twitter" or comment down below and I will help you out.
+
+Happy coding <Twemoji emoji="clinking-beer-mugs" />.
+
+
+
