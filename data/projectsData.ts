@@ -16,4 +16,11 @@ export let projectsData: Project[] = [
     repo: 'incident_intelligence',
     builtWith: ['Terraform', 'Prefect', 'DBT', 'Google Cloud', 'Bigquery', 'Looker Studio'],
   },
+  {
+    type: 'self',
+    title: 'Am I Diabetic',
+    imgSrc: '/static/images/aid_arch.png',
+    repo: 'aid',
+    builtWith: ['Python', 'Flask', 'Docker', 'Fly.io'],
+  },
 ]
