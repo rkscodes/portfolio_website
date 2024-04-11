@@ -21,8 +21,6 @@ export function PageSeo({ title, description }: PageSeoProps) {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${siteMetadata.siteUrl}${siteMetadata.socialBanner}`} />
-      <meta name="theme-color" content="#22272E" media="(prefers-color-scheme: dark)" />
-      <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
     </Head>
   )
 }
