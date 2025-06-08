@@ -6,7 +6,7 @@ export let siteMetadata = {
   footerTitle: "Ram's 0 & 1 🌟",
   description: "Ram's coding journey and his blogs",
   language: 'en-us',
-  siteUrl: 'https://rks.codes',
+  siteUrl: 'https://rkscodes.com',
   siteRepo: 'https://github.com/rkscodes/ram_portfolio',
   siteLogo: '/static/images/sitelogo.png',
   image: '/static/images/logo.jpg',
@@ -18,11 +18,11 @@ export let siteMetadata = {
   // youtube: 'https://www.youtube.com/@hta218_',
   linkedin: 'https://www.linkedin.com/in/rkscodes',
   locale: 'en-US',
-  analyticsURL: 'https://analytics.leohuynh.dev/share/jkwRskv0/leohuynh.dev',
+  analyticsURL: 'https://analytics.rkscodes.com',
   analytics: {
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
     simpleAnalytics: false, // true or false
-    umamiWebsiteId: '50b0142b-a6cb-49af-886b-f960e54ed683', // e.g. 123e4567-e89b-12d3-a456-426614174000
+    umamiWebsiteId: '6eff844c-2bea-4431-9d9d-fad8ccfa0411', // e.g. 123e4567-e89b-12d3-a456-426614174000
     googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
   },
   socialAccounts: {
