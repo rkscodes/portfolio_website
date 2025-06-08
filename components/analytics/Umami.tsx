@@ -6,7 +6,7 @@ export function UmamiScript() {
     <Script
       async
       data-website-id={siteMetadata.analytics.umamiWebsiteId}
-      src="https://analytics.rkscodes.com/script.js"
+      src="https://www.analytics.rkscodes.com/script.js"
     />
   )
 }

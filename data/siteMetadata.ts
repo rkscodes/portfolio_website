@@ -18,7 +18,7 @@ export let siteMetadata = {
   // youtube: 'https://www.youtube.com/@hta218_',
   linkedin: 'https://www.linkedin.com/in/rkscodes',
   locale: 'en-US',
-  analyticsURL: 'https://analytics.rkscodes.com',
+  analyticsURL: 'https://www.analytics.rkscodes.com',
   analytics: {
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
     simpleAnalytics: false, // true or false
