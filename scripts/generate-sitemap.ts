@@ -2,7 +2,7 @@ import fs from 'fs'
 import { globby } from 'globby'
 import prettier from 'prettier'
 
-let SITE_URL = 'https://www.rks.codes/'
+let SITE_URL = 'https://www.rkscodes.com/'
 
 ;(async () => {
   console.log('Generating sitemap...')

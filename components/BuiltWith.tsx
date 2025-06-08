@@ -7,19 +7,19 @@ export function BuiltWith() {
     <div className="flex items-center space-x-1">
       <span className="mr-1 text-gray-500 dark:text-gray-400">Built with</span>
       <div className="flex space-x-1.5">
-        <Link href="https://nextjs.org?ref=rks.codes">
+        <Link href="https://nextjs.org?ref=rkscodes.com">
           <DevIcon type="NextJS" className="h-5 w-5" />
         </Link>
-        <Link href="https://tailwindcss.com?ref=rks.codes">
+        <Link href="https://tailwindcss.com?ref=rkscodes.com">
           <DevIcon type="TailwindCSS" className="h-5 w-5" />
         </Link>
-        <Link href="https://www.prisma.io?ref=rks.codes">
+        <Link href="https://www.prisma.io?ref=rkscodes.com">
           <DevIcon type="Prisma" className="h-5 w-5" />
         </Link>
-        <Link href="https://www.typescriptlang.org?ref=rks.codes">
+        <Link href="https://www.typescriptlang.org?ref=rkscodes.com">
           <DevIcon type="Typescript" className="h-5 w-5" />
         </Link>
-        <Link href="https://umami.is?ref=rks.codes" className="pl-px">
+        <Link href="https://umami.is?ref=rkscodes.com" className="pl-px">
           <DevIcon type="Umami" className="h-5 w-5" />
         </Link>
       </div>
